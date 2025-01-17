@@ -1,9 +1,48 @@
 package hexlet.code;
 
-class App {
-    public static void main(String[] args) {
-        System.out.println("Welcome to the Brain Games!");
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Scanner;
 
-        Cli.greeting();
+class App {
+    public static int userChoiceInMenu() {
+        Scanner scannerSelectGame = new Scanner(System.in);
+
+        if (!scannerSelectGame.hasNextInt()) {
+            return -1;
+        }
+
+        return scannerSelectGame.nextInt();
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Please enter the game number and press Enter.");
+
+        Map<String, Integer> menu = new LinkedHashMap<>();
+        menu.put("Greet", 1);
+        menu.put("Even", 2);
+        menu.put("Calc", 3);
+        menu.put("GCD", 4);
+        menu.put("Progression", 5);
+        menu.put("Prime", 6);
+        menu.put("Exit", 0);
+
+        menu.forEach((key, value) -> System.out.println(value + " - " + key));
+
+        System.out.print("Your choice: ");
+
+        switch (userChoiceInMenu()) {
+            case 1:
+                Engine.selectGreet();
+                break;
+            case 2:
+                Engine.selectEven();
+                break;
+            default:
+                System.out.println("You entered the wrong value. Try again.");
+                break;
+        }
+
+
     }
 }
