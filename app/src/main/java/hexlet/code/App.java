@@ -41,6 +41,9 @@ class App {
             case 3:
                 Engine.selectCalc();
                 break;
+            case 4:
+                Engine.selectGcd();
+                break;
             default:
                 System.out.println("You entered the wrong value. Try again.");
                 break;

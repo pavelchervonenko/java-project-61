@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
+import hexlet.code.games.Gcd;
 
 import java.util.Scanner;
 
@@ -16,11 +17,11 @@ public class Engine {
 
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
-        int[] dataEven = Even.returnDataEven();
+        //int[] dataEven = Even.returnDataEven();
         int countCorrectAnswer = 0;
 
         for (int i = 0; i < 3; i++) {
-            int currentNumber = dataEven[i];
+            int currentNumber = Even.generationRandomNumber();
             String correctAnswer = currentNumber % 2 == 0 ? "yes" : "no";
 
             System.out.println("Question: " + currentNumber);
@@ -92,6 +93,47 @@ public class Engine {
             }
 
         }
+    }
 
+    public static void selectGcd() {
+
+        UserInteraction.greetingUser();
+
+        System.out.println("Find the greatest common divisor of given numbers.");
+
+        int countCorrectAnswer = 0;
+
+        for (int i = 0; i < 3; i++) {
+            long[] dataNumbersGcd = Gcd.returnDataNumbersGcd();
+
+            long currentNumberOne = dataNumbersGcd[0];
+            long currentNumberTwo = dataNumbersGcd[1];
+
+            long correctAnswer = Gcd.gcd(currentNumberOne, currentNumberTwo);
+
+            System.out.println("Question: " + currentNumberOne + " " + currentNumberTwo);
+            System.out.print("Your answer: ");
+
+            Scanner scannerUserAnswer = new Scanner(System.in);
+            if (!scannerUserAnswer.hasNextLong()) {
+                var currentScannerUserAnswer = scannerUserAnswer.next();
+                System.out.println("'" + currentScannerUserAnswer + "' " + "is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
+                System.exit(0);
+            }
+            int userAnswer = scannerUserAnswer.nextInt();
+
+            if (userAnswer == correctAnswer) {
+                System.out.println("Correct!");
+                countCorrectAnswer += 1;
+                if (countCorrectAnswer == 3) {
+                    UserInteraction.congratulationsUser();
+                }
+            } else {
+                System.out.println("'" + userAnswer + "' " + "is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
+                UserInteraction.wrongAnswerUser();
+                System.exit(0);
+            }
+
+        }
     }
 }

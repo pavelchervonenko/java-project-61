@@ -5,3 +5,6 @@
 
 ## Игра Calc
 [![asciicast](https://asciinema.org/a/qTc7vuBMMfs3vX0UBJRATT6K9.svg)](https://asciinema.org/a/qTc7vuBMMfs3vX0UBJRATT6K9)
+
+##Игра GCD
+[![asciicast](https://asciinema.org/a/XsqgZ0xsFQY6uPHZ3si3Hukyc.svg)](https://asciinema.org/a/XsqgZ0xsFQY6uPHZ3si3Hukyc)
