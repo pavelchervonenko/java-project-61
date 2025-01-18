@@ -14,7 +14,7 @@ public class UserInteraction {
     }
 
     public static void congratulationsUser() {
-        System.out.println("Congratulation, " + UserInteraction.userName + "!");
+        System.out.println("Congratulations, " + UserInteraction.userName + "!");
     }
 
     public static void wrongAnswerUser() {

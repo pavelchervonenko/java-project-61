@@ -1,11 +1,11 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Random;
 
 public class Even {
     public static int generationRandomNumber() {
         Random random = new Random();
-        return random.nextInt(101);
+        return random.nextInt(150);
     }
 
     public static int[] returnDataEven() {

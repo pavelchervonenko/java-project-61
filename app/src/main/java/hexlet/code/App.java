@@ -38,6 +38,9 @@ class App {
             case 2:
                 Engine.selectEven();
                 break;
+            case 3:
+                Engine.selectCalc();
+                break;
             default:
                 System.out.println("You entered the wrong value. Try again.");
                 break;
