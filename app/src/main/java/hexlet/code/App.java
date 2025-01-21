@@ -44,6 +44,9 @@ class App {
             case 4:
                 Engine.selectGcd();
                 break;
+            case 5:
+                Engine.selectProgression();
+                break;
             default:
                 System.out.println("You entered the wrong value. Try again.");
                 break;

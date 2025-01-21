@@ -8,3 +8,6 @@
 
 ## Игра GCD
 [![asciicast](https://asciinema.org/a/XsqgZ0xsFQY6uPHZ3si3Hukyc.svg)](https://asciinema.org/a/XsqgZ0xsFQY6uPHZ3si3Hukyc)
+
+## Игра Progression
+[![asciicast](https://asciinema.org/a/VH2Bd2eBjfFjVWaiFJxZTh9LJ.svg)](https://asciinema.org/a/VH2Bd2eBjfFjVWaiFJxZTh9LJ)

@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.Gcd;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
@@ -118,6 +119,7 @@ public class Engine {
             if (!scannerUserAnswer.hasNextLong()) {
                 var currentScannerUserAnswer = scannerUserAnswer.next();
                 System.out.println("'" + currentScannerUserAnswer + "' " + "is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
+                UserInteraction.wrongAnswerUser();
                 System.exit(0);
             }
             int userAnswer = scannerUserAnswer.nextInt();
@@ -135,5 +137,42 @@ public class Engine {
             }
 
         }
+    }
+    public static void selectProgression() {
+
+        UserInteraction.greetingUser();
+
+        System.out.println("What number is missing in the progression?");
+
+        int countCorrectAnswer = 0;
+
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Question: " + Progression.FinalProgressionInString());
+            int correctAnswer = Progression.returnCorrectAnswer();
+            System.out.print("Your answer: ");
+
+            Scanner scannerUserAnswer = new Scanner(System.in);
+            if (!scannerUserAnswer.hasNextLong()) {
+                var currentScannerUserAnswer = scannerUserAnswer.next();
+                System.out.println("'" + currentScannerUserAnswer + "' " + "is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
+                UserInteraction.wrongAnswerUser();
+                System.exit(0);
+            }
+            int userAnswer = scannerUserAnswer.nextInt();
+
+            if (userAnswer == correctAnswer) {
+                System.out.println("Correct!");
+                countCorrectAnswer += 1;
+                if (countCorrectAnswer == 3) {
+                    UserInteraction.congratulationsUser();
+                }
+            } else {
+                System.out.println("'" + userAnswer + "' " + "is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
+                UserInteraction.wrongAnswerUser();
+                System.exit(0);
+            }
+
+        }
+
     }
 }
