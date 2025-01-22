@@ -55,7 +55,6 @@ public class Progression {
     }
 
     public static String FinalProgressionInString() {
-
         int[] progression = FinalProgressionInInteger();
         String[] result = new String[countNumbersInProgression];
 

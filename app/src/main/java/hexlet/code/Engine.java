@@ -1,7 +1,6 @@
 package hexlet.code;
 
 import hexlet.code.games.*;
-
 import java.util.Scanner;
 
 public class Engine {
@@ -15,7 +14,6 @@ public class Engine {
 
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
-        //int[] dataEven = Even.returnDataEven();
         int countCorrectAnswer = 0;
 
         for (int i = 0; i < 3; i++) {
@@ -89,7 +87,6 @@ public class Engine {
                 UserInteraction.wrongAnswerUser();
                 System.exit(0);
             }
-
         }
     }
 
@@ -115,11 +112,14 @@ public class Engine {
             Scanner scannerUserAnswer = new Scanner(System.in);
             if (!scannerUserAnswer.hasNextLong()) {
                 var currentScannerUserAnswer = scannerUserAnswer.next();
+
                 System.out.println("'" + currentScannerUserAnswer + "' " + "is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
+
                 UserInteraction.wrongAnswerUser();
                 System.exit(0);
             }
-            int userAnswer = scannerUserAnswer.nextInt();
+
+            long userAnswer = scannerUserAnswer.nextInt();
 
             if (userAnswer == correctAnswer) {
                 System.out.println("Correct!");
@@ -132,7 +132,6 @@ public class Engine {
                 UserInteraction.wrongAnswerUser();
                 System.exit(0);
             }
-
         }
     }
     public static void selectProgression() {
@@ -145,16 +144,21 @@ public class Engine {
 
         for (int i = 0; i < 3; i++) {
             System.out.println("Question: " + Progression.FinalProgressionInString());
+
             int correctAnswer = Progression.returnCorrectAnswer();
+
             System.out.print("Your answer: ");
 
             Scanner scannerUserAnswer = new Scanner(System.in);
             if (!scannerUserAnswer.hasNextLong()) {
                 var currentScannerUserAnswer = scannerUserAnswer.next();
+
                 System.out.println("'" + currentScannerUserAnswer + "' " + "is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
+
                 UserInteraction.wrongAnswerUser();
                 System.exit(0);
             }
+
             int userAnswer = scannerUserAnswer.nextInt();
 
             if (userAnswer == correctAnswer) {
@@ -168,9 +172,7 @@ public class Engine {
                 UserInteraction.wrongAnswerUser();
                 System.exit(0);
             }
-
         }
-
     }
 
     public static void selectPrime() {
@@ -200,7 +202,6 @@ public class Engine {
                 UserInteraction.wrongAnswerUser();
                 System.exit(0);
             }
-
         }
     }
 }

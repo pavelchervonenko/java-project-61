@@ -7,9 +7,12 @@ public class UserInteraction {
     static String userName;
 
     public static void greetingUser() {
+        System.out.println();
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
+
         userName = scanner.next();
+
         System.out.println(("Hello, " + UserInteraction.userName + "!"));
     }
 

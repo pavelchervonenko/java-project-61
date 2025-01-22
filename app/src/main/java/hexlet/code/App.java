@@ -7,11 +7,6 @@ import java.util.Scanner;
 class App {
     public static int userChoiceInMenu() {
         Scanner scannerSelectGame = new Scanner(System.in);
-
-        if (!scannerSelectGame.hasNextInt()) {
-            return -1;
-        }
-
         return scannerSelectGame.nextInt();
     }
 
@@ -50,11 +45,13 @@ class App {
             case 6:
                 Engine.selectPrime();
                 break;
+            case 0:
+                System.out.println("Bye!");
+                System.exit(0);
+                break;
             default:
                 System.out.println("You entered the wrong value. Try again.");
                 break;
         }
-
-
     }
 }

@@ -13,9 +13,11 @@ public class Gcd {
     }
 
     public static long generationRandomNumberGcd() {
+        Random random = new Random();
+
         long min = 1;
         long max = 100;
-        Random random = new Random();
+
         return random.nextLong(max - min + 1) + min;
     }
 
