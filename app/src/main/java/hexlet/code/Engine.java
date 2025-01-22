@@ -1,9 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.Gcd;
-import hexlet.code.games.Progression;
+import hexlet.code.games.*;
 
 import java.util.Scanner;
 
@@ -174,5 +171,36 @@ public class Engine {
 
         }
 
+    }
+
+    public static void selectPrime() {
+        UserInteraction.greetingUser();
+
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+
+        int countCorrectAnswer = 0;
+
+        for (int i = 0; i < 3; i++) {
+            int number = Prime.returnRandomNumber();
+            String correctAnswer = Prime.returnCorrectAnswer(number);
+            System.out.println("Question: " + number);
+            System.out.print("Your answer: ");
+
+            Scanner scannerUserAnswer = new Scanner(System.in);
+            String userAnswer = scannerUserAnswer.next();
+
+            if (userAnswer.equals(correctAnswer)) {
+                System.out.println("Correct!");
+                countCorrectAnswer += 1;
+                if (countCorrectAnswer == 3) {
+                    UserInteraction.congratulationsUser();
+                }
+            } else {
+                System.out.println("'" + userAnswer + "' " + "is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
+                UserInteraction.wrongAnswerUser();
+                System.exit(0);
+            }
+
+        }
     }
 }

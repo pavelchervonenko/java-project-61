@@ -11,3 +11,7 @@
 
 ## Игра Progression
 [![asciicast](https://asciinema.org/a/VH2Bd2eBjfFjVWaiFJxZTh9LJ.svg)](https://asciinema.org/a/VH2Bd2eBjfFjVWaiFJxZTh9LJ)
+
+## Игра Prime
+
+[![asciicast](https://asciinema.org/a/tGS77WfqwYKANh6JT7SqPbhKB.svg)](https://asciinema.org/a/tGS77WfqwYKANh6JT7SqPbhKB)

@@ -47,6 +47,9 @@ class App {
             case 5:
                 Engine.selectProgression();
                 break;
+            case 6:
+                Engine.selectPrime();
+                break;
             default:
                 System.out.println("You entered the wrong value. Try again.");
                 break;
