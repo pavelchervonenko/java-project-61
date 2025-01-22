@@ -5,24 +5,24 @@
 «Игры разума» — набор из пяти консольных игр, построенных по принципу популярных мобильных приложений для прокачки мозга. Каждая игра задает вопросы, на которые нужно дать правильные ответы. После трех правильных ответов считается, что игра пройдена. Неправильные ответы завершают игру и предлагают пройти ее заново.
 
 ## Игры:
-- Калькулятор. Арифметические выражения, которые необходимо вычислить. (#игра-calc)
-- Прогрессия. Поиск пропущенных чисел в последовательности чисел. (#игра-progression)
-- Определение четного числа. (#игра-even)
-- Определение наибольшего общего делителя. (#игра-gcd)
-- Определение простого числа. (#игра-prime)
+- [Калькулятор.] Арифметические выражения, которые необходимо вычислить. (#игра-calc)
+- [Прогрессия.] Поиск пропущенных чисел в последовательности чисел. (#игра-progression)
+- [Определение четного числа.] (#игра-even)
+- [Определение наибольшего общего делителя.] (#игра-gcd)
+- [Определение простого числа.] (#игра-prime)
 
-## Игра Even
+### Игра Even
 [![asciicast](https://asciinema.org/a/1PNXZSRi6eSDVfdDvgB5qMW73.svg)](https://asciinema.org/a/1PNXZSRi6eSDVfdDvgB5qMW73)
 
-## Игра Calc
+### Игра Calc
 [![asciicast](https://asciinema.org/a/M0ax9VWtSrufqS5nMgb5bAWWu.svg)](https://asciinema.org/a/M0ax9VWtSrufqS5nMgb5bAWWu)
 
-## Игра GCD
+### Игра GCD
 [![asciicast](https://asciinema.org/a/M0ax9VWtSrufqS5nMgb5bAWWu.svg)](https://asciinema.org/a/M0ax9VWtSrufqS5nMgb5bAWWu)
 
 ## Игра Progression
 [![asciicast](https://asciinema.org/a/zoRojO09N6k08kAoyVEUoQHkh.svg)](https://asciinema.org/a/zoRojO09N6k08kAoyVEUoQHkh)
 
-## Игра Prime
+### Игра Prime
 [![asciicast](https://asciinema.org/a/bj4F2i5DfJD98MedygA8mxYIe.svg)](https://asciinema.org/a/bj4F2i5DfJD98MedygA8mxYIe)
 
