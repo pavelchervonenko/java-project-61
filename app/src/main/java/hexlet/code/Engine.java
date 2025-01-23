@@ -1,12 +1,15 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Even;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Gcd;
 
-import java.util.Optional;
 import java.util.Scanner;
 
 public class Engine {
-    final static int rounds = 3;
+    final static int ROUNDS = 3;
 
     public static void selectGreet() {
         UserInteraction.greetingUser();
@@ -20,7 +23,7 @@ public class Engine {
 
         int countCorrectAnswer = 0;
 
-        for (int i = 0; i < rounds; i++) {
+        for (int i = 0; i < ROUNDS; i++) {
             int currentNumber = Even.generationRandomNumber();
             String correctAnswer = currentNumber % 2 == 0 ? "yes" : "no";
 
@@ -33,7 +36,7 @@ public class Engine {
             if (userAnswer.equals(correctAnswer)) {
                 System.out.println("Correct");
                 countCorrectAnswer += 1;
-                if (countCorrectAnswer == 3) {
+                if (countCorrectAnswer == ROUNDS) {
                     UserInteraction.congratulationsUser();
                 }
             } else {
@@ -53,7 +56,7 @@ public class Engine {
 
         int countCorrectAnswer = 0;
 
-        for (int i = 0; i < rounds; i++) {
+        for (int i = 0; i < ROUNDS; i++) {
             int[] dataNumbersCalc = Calc.returnDataNumbersCalc();
             String currentOperation = Calc.returnDataOperationCalc();
 
@@ -84,7 +87,7 @@ public class Engine {
             if (userAnswer.equals(correctAnswer)) {
                 System.out.println("Correct!");
                 countCorrectAnswer += 1;
-                if (countCorrectAnswer == 3) {
+                if (countCorrectAnswer == ROUNDS) {
                     UserInteraction.congratulationsUser();
                 }
             } else {
@@ -105,7 +108,7 @@ public class Engine {
 
         int countCorrectAnswer = 0;
 
-        for (int i = 0; i < rounds; i++) {
+        for (int i = 0; i < ROUNDS; i++) {
             long[] dataNumbersGcd = Gcd.returnDataNumbersGcd();
 
             long currentNumberOne = dataNumbersGcd[0];
@@ -132,7 +135,7 @@ public class Engine {
             if (userAnswer == correctAnswer) {
                 System.out.println("Correct!");
                 countCorrectAnswer += 1;
-                if (countCorrectAnswer == 3) {
+                if (countCorrectAnswer == ROUNDS) {
                     UserInteraction.congratulationsUser();
                 }
             } else {
@@ -152,7 +155,7 @@ public class Engine {
 
         int countCorrectAnswer = 0;
 
-        for (int i = 0; i < rounds; i++) {
+        for (int i = 0; i < ROUNDS; i++) {
             System.out.println("Question: " + Progression.FinalProgressionInString());
 
             int correctAnswer = Progression.returnCorrectAnswer();
@@ -175,7 +178,7 @@ public class Engine {
             if (userAnswer == correctAnswer) {
                 System.out.println("Correct!");
                 countCorrectAnswer += 1;
-                if (countCorrectAnswer == 3) {
+                if (countCorrectAnswer == ROUNDS) {
                     UserInteraction.congratulationsUser();
                 }
             } else {
@@ -195,7 +198,7 @@ public class Engine {
 
         int countCorrectAnswer = 0;
 
-        for (int i = 0; i < rounds; i++) {
+        for (int i = 0; i < ROUNDS; i++) {
             int number = Prime.returnRandomNumber();
             String correctAnswer = Prime.returnCorrectAnswer(number);
             System.out.println("Question: " + number);
@@ -207,7 +210,7 @@ public class Engine {
             if (userAnswer.equals(correctAnswer)) {
                 System.out.println("Correct!");
                 countCorrectAnswer += 1;
-                if (countCorrectAnswer == 3) {
+                if (countCorrectAnswer == ROUNDS) {
                     UserInteraction.congratulationsUser();
                 }
             } else {

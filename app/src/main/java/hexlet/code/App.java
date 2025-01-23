@@ -1,7 +1,5 @@
 package hexlet.code;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 class App {
@@ -13,16 +11,11 @@ class App {
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
 
-        Map<String, Integer> menu = new LinkedHashMap<>();
-        menu.put("Greet", 1);
-        menu.put("Even", 2);
-        menu.put("Calc", 3);
-        menu.put("GCD", 4);
-        menu.put("Progression", 5);
-        menu.put("Prime", 6);
-        menu.put("Exit", 0);
+        String[] menu = {"1 - Greet", "2 - Even", "3 - Calc", "4 - GCD", "5 - Progression", "6 - Prime", "0 - Exit"};
 
-        menu.forEach((key, value) -> System.out.println(value + " - " + key));
+        for (var section : menu) {
+            System.out.println(section);
+        }
 
         System.out.print("Your choice: ");
 
