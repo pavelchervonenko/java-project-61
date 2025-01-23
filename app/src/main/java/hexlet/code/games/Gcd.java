@@ -15,8 +15,8 @@ public class Gcd {
     public static long generationRandomNumberGcd() {
         Random random = new Random();
 
-        long min = 1;
-        long max = 100;
+        final long min = 1;
+        final long max = 100;
 
         return random.nextLong(max - min + 1) + min;
     }

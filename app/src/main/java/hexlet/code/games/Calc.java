@@ -5,7 +5,8 @@ import java.util.Random;
 public class Calc {
     public static int generationRandomNumber() {
         Random random = new Random();
-        return random.nextInt(101);
+        final int max = 101;
+        return random.nextInt(max);
     }
 
     public static int[] returnDataNumbersCalc() {

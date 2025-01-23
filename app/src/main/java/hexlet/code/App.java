@@ -5,9 +5,9 @@ import java.util.Map;
 import java.util.Scanner;
 
 class App {
-    public static int userChoiceInMenu() {
+    public static String userChoiceInMenu() {
         Scanner scannerSelectGame = new Scanner(System.in);
-        return scannerSelectGame.nextInt();
+        return scannerSelectGame.next();
     }
 
     public static void main(String[] args) {
@@ -27,25 +27,25 @@ class App {
         System.out.print("Your choice: ");
 
         switch (userChoiceInMenu()) {
-            case 1:
+            case "1":
                 Engine.selectGreet();
                 break;
-            case 2:
+            case "2":
                 Engine.selectEven();
                 break;
-            case 3:
+            case "3":
                 Engine.selectCalc();
                 break;
-            case 4:
+            case "4":
                 Engine.selectGcd();
                 break;
-            case 5:
+            case "5":
                 Engine.selectProgression();
                 break;
-            case 6:
+            case "6":
                 Engine.selectPrime();
                 break;
-            case 0:
+            case "0":
                 System.out.println("Bye!");
                 System.exit(0);
                 break;

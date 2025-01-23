@@ -1,10 +1,12 @@
 package hexlet.code;
 
 import hexlet.code.games.*;
+
+import java.util.Optional;
 import java.util.Scanner;
 
 public class Engine {
-    static int rounds = 3;
+    final static int rounds = 3;
 
     public static void selectGreet() {
         UserInteraction.greetingUser();
@@ -36,6 +38,7 @@ public class Engine {
                 }
             } else {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
+
                 UserInteraction.wrongAnswerUser();
                 System.exit(0);
             }
@@ -85,7 +88,9 @@ public class Engine {
                     UserInteraction.congratulationsUser();
                 }
             } else {
-                System.out.println("'" + userAnswer + "' " + "is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
+                System.out.print("'" + userAnswer + "' " + "is wrong answer ;(.");
+                System.out.println(" Correct answer was " + "'" + correctAnswer + "'.");
+
                 UserInteraction.wrongAnswerUser();
                 System.exit(0);
             }
@@ -115,7 +120,8 @@ public class Engine {
             if (!scannerUserAnswer.hasNextLong()) {
                 var currentScannerUserAnswer = scannerUserAnswer.next();
 
-                System.out.println("'" + currentScannerUserAnswer + "' " + "is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
+                System.out.print("'" + currentScannerUserAnswer + "' " + "is wrong answer ;(.");
+                System.out.println(" Correct answer was " + "'" + correctAnswer + "'.");
 
                 UserInteraction.wrongAnswerUser();
                 System.exit(0);
@@ -130,7 +136,9 @@ public class Engine {
                     UserInteraction.congratulationsUser();
                 }
             } else {
-                System.out.println("'" + userAnswer + "' " + "is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
+                System.out.print("'" + userAnswer + "' " + "is wrong answer ;(.");
+                System.out.println(" Correct answer was " + "'" + correctAnswer + "'.");
+
                 UserInteraction.wrongAnswerUser();
                 System.exit(0);
             }
@@ -155,7 +163,8 @@ public class Engine {
             if (!scannerUserAnswer.hasNextLong()) {
                 var currentScannerUserAnswer = scannerUserAnswer.next();
 
-                System.out.println("'" + currentScannerUserAnswer + "' " + "is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
+                System.out.print("'" + currentScannerUserAnswer + "' " + "is wrong answer ;(.");
+                System.out.println(" Correct answer was " + "'" + correctAnswer + "'.");
 
                 UserInteraction.wrongAnswerUser();
                 System.exit(0);
@@ -170,7 +179,9 @@ public class Engine {
                     UserInteraction.congratulationsUser();
                 }
             } else {
-                System.out.println("'" + userAnswer + "' " + "is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
+                System.out.print("'" + userAnswer + "' " + "is wrong answer ;(.");
+                System.out.println(" Correct answer was " + "'" + correctAnswer + "'.");
+
                 UserInteraction.wrongAnswerUser();
                 System.exit(0);
             }
@@ -200,7 +211,9 @@ public class Engine {
                     UserInteraction.congratulationsUser();
                 }
             } else {
-                System.out.println("'" + userAnswer + "' " + "is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'.");
+                System.out.print("'" + userAnswer + "' " + "is wrong answer ;(.");
+                System.out.println(" Correct answer was " + "'" + correctAnswer + "'.");
+
                 UserInteraction.wrongAnswerUser();
                 System.exit(0);
             }

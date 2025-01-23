@@ -9,28 +9,29 @@ public class Progression {
 
     public static int returnCountNumbersInProgression() {
         Random random = new Random();
-        int min = 10;
-        int max = 15;
+        final int min = 10;
+        final int max = 15;
         return random.nextInt(max - min + 1) + min;
     }
 
     public static int returnStartNumberInProgression() {
         Random random = new Random();
-        return random.nextInt(100);
+        final int max = 100;
+        return random.nextInt(max);
     }
 
     public static int returnIndexUnknownNumberInProgression() {
         Random random = new Random();
         countNumbersInProgression = returnCountNumbersInProgression();
-        int max = countNumbersInProgression - 1;
-        int min = 3;
+        final int max = countNumbersInProgression - 1;
+        final int min = 3;
         return random.nextInt(max - min + 1) + min;
     }
 
     public static int returnStepInProgression() {
         Random random = new Random();
-        int max = 15;
-        int min = 1;
+        final int max = 15;
+        final int min = 1;
         return random.nextInt(max - min + 1) + min;
     }
 
@@ -71,5 +72,3 @@ public class Progression {
         return String.join(" ", result);
     }
 }
-
-
