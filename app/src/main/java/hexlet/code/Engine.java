@@ -4,6 +4,8 @@ import hexlet.code.games.*;
 import java.util.Scanner;
 
 public class Engine {
+    static int rounds = 3;
+
     public static void selectGreet() {
         UserInteraction.greetingUser();
     }
@@ -16,7 +18,7 @@ public class Engine {
 
         int countCorrectAnswer = 0;
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < rounds; i++) {
             int currentNumber = Even.generationRandomNumber();
             String correctAnswer = currentNumber % 2 == 0 ? "yes" : "no";
 
@@ -48,7 +50,7 @@ public class Engine {
 
         int countCorrectAnswer = 0;
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < rounds; i++) {
             int[] dataNumbersCalc = Calc.returnDataNumbersCalc();
             String currentOperation = Calc.returnDataOperationCalc();
 
@@ -98,7 +100,7 @@ public class Engine {
 
         int countCorrectAnswer = 0;
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < rounds; i++) {
             long[] dataNumbersGcd = Gcd.returnDataNumbersGcd();
 
             long currentNumberOne = dataNumbersGcd[0];
@@ -142,7 +144,7 @@ public class Engine {
 
         int countCorrectAnswer = 0;
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < rounds; i++) {
             System.out.println("Question: " + Progression.FinalProgressionInString());
 
             int correctAnswer = Progression.returnCorrectAnswer();
@@ -182,7 +184,7 @@ public class Engine {
 
         int countCorrectAnswer = 0;
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < rounds; i++) {
             int number = Prime.returnRandomNumber();
             String correctAnswer = Prime.returnCorrectAnswer(number);
             System.out.println("Question: " + number);
