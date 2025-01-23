@@ -21,6 +21,6 @@ public class UserInteraction {
     }
 
     public static void wrongAnswerUser() {
-        System.out.println("Let's try again, " + UserInteraction.userName);
+        System.out.println("Let's try again, " + UserInteraction.userName + "!");
     }
 }
