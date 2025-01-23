@@ -20,8 +20,10 @@ public class Calc {
 
     public static String returnDataOperationCalc() {
         Random random = new Random();
-        String[] dataOperationsCals = {"-", "+", "*"};
 
-        return dataOperationsCals[random.nextInt(3)];
+        String[] dataOperationsCals = {"-", "+", "*"};
+        final int max = 3;
+
+        return dataOperationsCals[random.nextInt(max)];
     }
 }

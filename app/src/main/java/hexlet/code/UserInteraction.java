@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class UserInteraction {
-    private final static Scanner scanner = new Scanner((System.in));
+    private static final Scanner SCANNER = new Scanner((System.in));
     private static String userName;
 
     public static void greetingUser() {
@@ -11,7 +11,7 @@ public class UserInteraction {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
 
-        userName = scanner.next();
+        userName = SCANNER.next();
 
         System.out.println(("Hello, " + UserInteraction.userName + "!"));
     }
