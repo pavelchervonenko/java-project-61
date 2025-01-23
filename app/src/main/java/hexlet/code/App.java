@@ -7,11 +7,6 @@ import java.util.Scanner;
 class App {
     public static int userChoiceInMenu() {
         Scanner scannerSelectGame = new Scanner(System.in);
-
-        if (!scannerSelectGame.hasNextInt()) {
-            return -1;
-        }
-
         return scannerSelectGame.nextInt();
     }
 
