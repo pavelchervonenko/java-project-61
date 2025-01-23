@@ -3,8 +3,8 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class UserInteraction {
-    static Scanner scanner = new Scanner((System.in));
-    static String userName;
+    private final static Scanner scanner = new Scanner((System.in));
+    private static String userName;
 
     public static void greetingUser() {
         System.out.println();

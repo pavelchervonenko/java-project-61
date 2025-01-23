@@ -3,9 +3,8 @@ package hexlet.code.games;
 import java.util.Random;
 
 public class Progression {
-    static int correctAnswer;
-    static int indexUnknownNumber;
-    static int countNumbersInProgression;
+    private static int correctAnswer;
+    private static int countNumbersInProgression;
 
     public static int returnCountNumbersInProgression() {
         Random random = new Random();
@@ -35,8 +34,8 @@ public class Progression {
         return random.nextInt(max - min + 1) + min;
     }
 
-    public static int[] FinalProgressionInInteger() {
-        indexUnknownNumber = returnIndexUnknownNumberInProgression();
+    public static int[] finalProgressionInInteger() {
+        int indexUnknownNumber = returnIndexUnknownNumberInProgression();
         int start = returnStartNumberInProgression();
         int step = returnStepInProgression();
 
@@ -55,8 +54,8 @@ public class Progression {
         return correctAnswer;
     }
 
-    public static String FinalProgressionInString() {
-        int[] progression = FinalProgressionInInteger();
+    public static String finalProgressionInString() {
+        int[] progression = finalProgressionInInteger();
         String[] result = new String[countNumbersInProgression];
 
         for (int i = 0; i < countNumbersInProgression; i++) {

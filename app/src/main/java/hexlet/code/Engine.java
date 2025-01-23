@@ -9,7 +9,7 @@ import hexlet.code.games.Gcd;
 import java.util.Scanner;
 
 public class Engine {
-    final static int ROUNDS = 3;
+    static final int ROUNDS = 3;
 
     public static void selectGreet() {
         UserInteraction.greetingUser();
@@ -156,7 +156,7 @@ public class Engine {
         int countCorrectAnswer = 0;
 
         for (int i = 0; i < ROUNDS; i++) {
-            System.out.println("Question: " + Progression.FinalProgressionInString());
+            System.out.println("Question: " + Progression.finalProgressionInString());
 
             int correctAnswer = Progression.returnCorrectAnswer();
 
