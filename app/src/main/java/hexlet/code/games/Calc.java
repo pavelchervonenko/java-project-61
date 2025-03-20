@@ -4,12 +4,16 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Calc {
-    public static String[] returnDataForCalc() {
-        String[] data = new String[6];
+    private static final int ROUNDS = 3; // Количество раундов
+    private static final int MAX_NUMBER = 100; // Максимальное число для генерации
+    private static final int DATA_SIZE = ROUNDS * 2; // Размер массива для вопросв и ответов
 
-        for (int i = 0; i < 3; i++) {
-            int numberOne = Util.randomWithBoard(0, 100);
-            int numberTwo = Util.randomWithBoard(0, 100);
+    public static String[] returnDataForCalc() {
+        String[] data = new String[DATA_SIZE];
+
+        for (int i = 0; i < ROUNDS; i++) {
+            int numberOne = Util.randomWithBoard(0, MAX_NUMBER);
+            int numberTwo = Util.randomWithBoard(0, MAX_NUMBER);
 
             String[] operations = {"-", "+", "*"};
             int max = operations.length;
@@ -37,7 +41,7 @@ public class Calc {
             String question = numberOneString + " " + operation + " " + numberTwoString;
 
             data[i] = question;
-            data[i + 3] = answerString;
+            data[i + ROUNDS] = answerString;
         }
         return data;
     }

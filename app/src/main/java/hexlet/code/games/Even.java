@@ -4,21 +4,25 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Even {
+    private static final int ROUNDS = 3; // Количество раундов
+    private static final int MAX_NUMBER = 100; // Максимальное число для генерации
+    private static final int DATA_SIZE = ROUNDS * 2; // Размер массива для вопросв и ответов
+
     public static String[] returnDataForEven() {
-        String[] data = new String[6];
+        String[] data = new String[DATA_SIZE];
         int numberInteger;
 
-        for (int i = 0; i < 3; i++) {
-            numberInteger = Util.randomWithBoard(1, 100);
+        for (int i = 0; i < ROUNDS; i++) {
+            numberInteger = Util.randomWithBoard(1, MAX_NUMBER);
 
             String numberString = String.valueOf(numberInteger);
             data[i] = numberString;
 
             if (numberInteger % 2 == 0) {
-                data[i + 3] = "yes";
+                data[i + ROUNDS] = "yes";
             }
             else {
-                data[i + 3] = "no";
+                data[i + ROUNDS] = "no";
             }
         }
         return data;
