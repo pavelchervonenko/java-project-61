@@ -9,29 +9,30 @@ import java.util.Scanner;
 // Прибавляем всегда 3, так как три раунда и на каждый уникальный набор данных
 
 public class Engine {
+    private static final int ROUNDS = 3;
+
     public static void check(String[] data) {
         int countCorrectAnswer = 0;
-        int rounds = 3;
 
-        for (int i = 0; i < rounds; i++) {
+        for (int i = 0; i < ROUNDS; i++) {
             System.out.println("Question: " + data[i]);
             System.out.print("Your answer: ");
 
             Scanner scannerUserAnswer = new Scanner(System.in);
             String userAnswer = scannerUserAnswer.next();
 
-            if (userAnswer.equals(data[i + 3])) {
+            if (userAnswer.equals(data[i + ROUNDS])) {
                 System.out.println("Correct");
                 countCorrectAnswer += 1;
 
-                if (countCorrectAnswer == rounds) {
-                    System.out.println("Congratulations, " + Util.userName + "!");
+                if (countCorrectAnswer == ROUNDS) {
+                    System.out.println("Congratulations, " + Util.getUserName() + "!");
                 }
             } else {
                 System.out.print("'" + userAnswer + "' " + "is wrong answer ;(.");
-                System.out.println(" Correct answer was " + "'" + data[i + 3] + "'.");
+                System.out.println(" Correct answer was " + "'" + data[i + ROUNDS] + "'.");
 
-                System.out.println("Let's try again, " + Util.userName + "!");
+                System.out.println("Let's try again, " + Util.getUserName() + "!");
                 System.exit(0);
             }
         }
