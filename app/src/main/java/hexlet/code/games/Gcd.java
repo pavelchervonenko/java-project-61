@@ -20,7 +20,7 @@ public class Gcd {
     public static String[] returnDataForGcd() {
         String[] data = new String[DATA_SIZE];
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < ROUNDS; i++) {
             int numberOne = Util.randomWithBoard(0, MAX_NUMBER);
             int numberTwo = Util.randomWithBoard(0, MAX_NUMBER);
 
@@ -33,7 +33,7 @@ public class Gcd {
             String question = numberOneString + " " + numberTwoString;
 
             data[i] = question;
-            data[i + 3] = answerString;
+            data[i + ROUNDS] = answerString;
         }
         return data;
     }

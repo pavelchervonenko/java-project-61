@@ -20,8 +20,7 @@ public class Even {
 
             if (numberInteger % 2 == 0) {
                 data[i + ROUNDS] = "yes";
-            }
-            else {
+            } else {
                 data[i + ROUNDS] = "no";
             }
         }
