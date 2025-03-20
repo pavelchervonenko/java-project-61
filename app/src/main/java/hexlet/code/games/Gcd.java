@@ -1,32 +1,44 @@
 package hexlet.code.games;
 
-import java.util.Random;
+import hexlet.code.Engine;
+import hexlet.code.Util;
 
 public class Gcd {
-    public static long gcd(long a, long b) {
+    public static int gcd(int a, int b) {
         while (b != 0) {
-            long temp = a % b;
+            int temp = a % b;
             a = b;
             b = temp;
         }
         return a;
     }
 
-    public static long generationRandomNumberGcd() {
-        Random random = new Random();
+    public static String[] returnDataForGcd() {
+        String[] data = new String[6];
 
-        final long min = 1;
-        final long max = 100;
+        for (int i = 0; i < 3; i++) {
+            int numberOne = Util.randomWithBoard(0, 100);
+            int numberTwo = Util.randomWithBoard(0, 100);
 
-        return random.nextLong(max - min + 1) + min;
+            String numberOneString = String.valueOf(numberOne);
+            String numberTwoString = String.valueOf(numberTwo);
+
+            int answerInteger = gcd(numberOne, numberTwo);
+            String answerString = String.valueOf(answerInteger);
+
+            String question = numberOneString + " " + numberTwoString;
+
+            data[i] = question;
+            data[i + 3] = answerString;
+        }
+        return data;
     }
 
-    public static long[] returnDataNumbersGcd() {
-        long[] randomNumbers = new long[2];
+    public static void gameGcd() {
+        Util.greetingUser();
 
-        randomNumbers[0] = generationRandomNumberGcd();
-        randomNumbers[1] = generationRandomNumberGcd();
+        System.out.println("Find the greatest common divisor of given numbers.");
 
-        return randomNumbers;
+        Engine.check(returnDataForGcd());
     }
 }

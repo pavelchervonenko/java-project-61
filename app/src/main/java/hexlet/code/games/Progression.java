@@ -1,73 +1,50 @@
 package hexlet.code.games;
 
-import java.util.Random;
+import hexlet.code.Engine;
+import hexlet.code.Util;
 
 public class Progression {
-    private static int correctAnswer;
-    private static int countNumbersInProgression;
+    public static String[] returnDataForProgression() {
+        String[] data = new String[6];
+        String answer = "";
+        int countNumbersInProgression;
+        int indexUnknownNumber;
+        int start;
+        int step;
 
-    public static int returnCountNumbersInProgression() {
-        Random random = new Random();
-        final int min = 10;
-        final int max = 15;
-        return random.nextInt(max - min + 1) + min;
-    }
+        for (int i = 0; i < 3; i++) {
+            countNumbersInProgression = Util.randomWithBoard(10, 15);
+            indexUnknownNumber = Util.randomWithBoard(2, countNumbersInProgression - 1);
+            start = Util.randomWithBoard(0, 100);
+            step = Util.randomWithBoard(1, 15);
 
-    public static int returnStartNumberInProgression() {
-        Random random = new Random();
-        final int max = 100;
-        return random.nextInt(max);
-    }
+            String[] progression = new String[countNumbersInProgression];
 
-    public static int returnIndexUnknownNumberInProgression() {
-        Random random = new Random();
-        countNumbersInProgression = returnCountNumbersInProgression();
-        final int max = countNumbersInProgression - 1;
-        final int min = 3;
-        return random.nextInt(max - min + 1) + min;
-    }
+            int coeff = 1;
+            for (int j = 0; j < countNumbersInProgression; j++) {
+                int temp = start + (step * coeff);
+                coeff++;
 
-    public static int returnStepInProgression() {
-        Random random = new Random();
-        final int max = 15;
-        final int min = 1;
-        return random.nextInt(max - min + 1) + min;
-    }
-
-    public static int[] finalProgressionInInteger() {
-        int indexUnknownNumber = returnIndexUnknownNumberInProgression();
-        int start = returnStartNumberInProgression();
-        int step = returnStepInProgression();
-
-        int[] progression = new int[countNumbersInProgression];
-        progression[0] = start;
-
-        for (int i = 1; i < countNumbersInProgression; i++) {
-            progression[i] = start + (step * i);
-        }
-
-        correctAnswer = progression[indexUnknownNumber];
-        return progression;
-    }
-
-    public static int returnCorrectAnswer() {
-        return correctAnswer;
-    }
-
-    public static String finalProgressionInString() {
-        int[] progression = finalProgressionInInteger();
-        String[] result = new String[countNumbersInProgression];
-
-        for (int i = 0; i < countNumbersInProgression; i++) {
-            String current = String.valueOf(progression[i]);
-
-            if (progression[i] == correctAnswer) {
-                result[i] = "..";
-                continue;
+                if (j == indexUnknownNumber) {
+                    answer = String.valueOf(temp);
+                    progression[j] = "..";
+                    continue;
+                }
+                progression[j] = String.valueOf(temp);
             }
-            result[i] = current;
-        }
+            String question = String.join(" ", progression);
 
-        return String.join(" ", result);
+            data[i] = question;
+            data[i + 3] = answer;
+        }
+        return data;
+    }
+
+    public static void gameProgression() {
+        Util.greetingUser();
+
+        System.out.println("What number is missing in the progression?");
+
+        Engine.check(returnDataForProgression());
     }
 }

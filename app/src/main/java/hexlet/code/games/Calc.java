@@ -1,29 +1,52 @@
 package hexlet.code.games;
 
-import java.util.Random;
+import hexlet.code.Engine;
+import hexlet.code.Util;
 
 public class Calc {
-    public static int generationRandomNumber() {
-        Random random = new Random();
-        final int max = 101;
-        return random.nextInt(max);
+    public static String[] returnDataForCalc() {
+        String[] data = new String[6];
+
+        for (int i = 0; i < 3; i++) {
+            int numberOne = Util.randomWithBoard(0, 100);
+            int numberTwo = Util.randomWithBoard(0, 100);
+
+            String[] operations = {"-", "+", "*"};
+            int max = operations.length;
+            String operation = operations[Util.randomWithBoard(0, max - 1)];
+
+            int answerInteger = 0;
+            switch (operation) {
+                case "-":
+                    answerInteger = numberOne - numberTwo;
+                    break;
+                case "+":
+                    answerInteger = numberOne + numberTwo;
+                    break;
+                case "*":
+                    answerInteger = numberOne * numberTwo;
+                    break;
+                default:
+                    System.out.println("Error: unknown operation.");
+                    break;
+            }
+            String numberOneString = String.valueOf(numberOne);
+            String numberTwoString = String.valueOf(numberTwo);
+
+            String answerString = String.valueOf(answerInteger);
+            String question = numberOneString + " " + operation + " " + numberTwoString;
+
+            data[i] = question;
+            data[i + 3] = answerString;
+        }
+        return data;
     }
 
-    public static int[] returnDataNumbersCalc() {
-        int[] randomNumbers = new int[2];
+    public static void gameCalc() {
+        Util.greetingUser();
 
-        randomNumbers[0] = generationRandomNumber();
-        randomNumbers[1] = generationRandomNumber();
+        System.out.println("What is the result of the expression?");
 
-        return randomNumbers;
-    }
-
-    public static String returnDataOperationCalc() {
-        Random random = new Random();
-
-        String[] dataOperationsCals = {"-", "+", "*"};
-        final int max = 3;
-
-        return dataOperationsCals[random.nextInt(max)];
+        Engine.check(returnDataForCalc());
     }
 }
