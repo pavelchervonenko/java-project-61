@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Util {
-    static String userName;
+    private static String userName;
 
     public static void greetingUser() {
         Scanner scanner = new Scanner((System.in));
@@ -16,6 +16,10 @@ public class Util {
         userName = scanner.next();
 
         System.out.println(("Hello, " + userName + "!"));
+    }
+
+    public static String getUserName() {
+        return userName;
     }
 
     public static int randomWithBoard(int min, int max) {
