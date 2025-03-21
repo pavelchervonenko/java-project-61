@@ -4,30 +4,29 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Prime {
-    private static final int ROUNDS = 3; // Количество раундов
     private static final int MAX_NUMBER = 150; // Максимальное число для генерации
-    private static final int DATA_SIZE = ROUNDS * 2; // Размер массива для вопросв и ответов
+    private static final int PARE = 2;
 
-    public static String[] returnDataForPrime() {
-        String[] data = new String[DATA_SIZE];
+    public static String[][] returnDataForPrime() {
+        String[][] data = new String[Engine.ROUNDS][PARE];
         int numberInteger;
 
-        for (int i = 0; i < ROUNDS; i++) {
+        for (int i = 0; i < Engine.ROUNDS; i++) {
             numberInteger = Util.randomWithBoard(2, MAX_NUMBER);
 
             String numberString = String.valueOf(numberInteger);
-            data[i] = numberString;
+            data[i][0] = numberString;
 
             int flag = 0;
             for (int j = 2; j * j <= numberInteger; j++) {
                 if (numberInteger % j == 0) {
-                    data[i + ROUNDS] = "no";
+                    data[i][1] = "no";
                     flag = 1;
                     break;
                 }
             }
             if (flag == 0) {
-                data[i + ROUNDS] = "yes";
+                data[i][1] = "yes";
             }
 
         }
@@ -35,10 +34,6 @@ public class Prime {
     }
 
     public static void gamePrime() {
-        Util.greetingUser();
-
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-
-        Engine.check(returnDataForPrime());
+        Engine.gamePrime();
     }
 }

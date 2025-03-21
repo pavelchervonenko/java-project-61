@@ -2,16 +2,17 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Util;
+import java.util.Scanner;
+
 
 public class Calc {
-    private static final int ROUNDS = 3; // Количество раундов
     private static final int MAX_NUMBER = 100; // Максимальное число для генерации
-    private static final int DATA_SIZE = ROUNDS * 2; // Размер массива для вопросв и ответов
+    private static final int PARE = 2;
 
-    public static String[] returnDataForCalc() {
-        String[] data = new String[DATA_SIZE];
+    public static String[][] returnDataForCalc() {
+        String[][] data = new String[Engine.ROUNDS][PARE];
 
-        for (int i = 0; i < ROUNDS; i++) {
+        for (int i = 0; i < Engine.ROUNDS; i++) {
             int numberOne = Util.randomWithBoard(0, MAX_NUMBER);
             int numberTwo = Util.randomWithBoard(0, MAX_NUMBER);
 
@@ -40,17 +41,13 @@ public class Calc {
             String answerString = String.valueOf(answerInteger);
             String question = numberOneString + " " + operation + " " + numberTwoString;
 
-            data[i] = question;
-            data[i + ROUNDS] = answerString;
+            data[i][0] = question;
+            data[i][1] = answerString;
         }
         return data;
     }
 
     public static void gameCalc() {
-        Util.greetingUser();
-
-        System.out.println("What is the result of the expression?");
-
-        Engine.check(returnDataForCalc());
+        Engine.gameCalc();
     }
 }

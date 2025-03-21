@@ -4,9 +4,8 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Gcd {
-    private static final int ROUNDS = 3; // Количество раундов
     private static final int MAX_NUMBER = 100; // Максимальное число для генерации
-    private static final int DATA_SIZE = ROUNDS * 2; // Размер массива для вопросв и ответов
+    private static final int PARE = 2;
 
     public static int gcd(int a, int b) {
         while (b != 0) {
@@ -17,10 +16,10 @@ public class Gcd {
         return a;
     }
 
-    public static String[] returnDataForGcd() {
-        String[] data = new String[DATA_SIZE];
+    public static String[][] returnDataForGcd() {
+        String[][] data = new String[Engine.ROUNDS][PARE];
 
-        for (int i = 0; i < ROUNDS; i++) {
+        for (int i = 0; i < Engine.ROUNDS; i++) {
             int numberOne = Util.randomWithBoard(0, MAX_NUMBER);
             int numberTwo = Util.randomWithBoard(0, MAX_NUMBER);
 
@@ -32,17 +31,13 @@ public class Gcd {
 
             String question = numberOneString + " " + numberTwoString;
 
-            data[i] = question;
-            data[i + ROUNDS] = answerString;
+            data[i][0] = question;
+            data[i][1] = answerString;
         }
         return data;
     }
 
     public static void gameGcd() {
-        Util.greetingUser();
-
-        System.out.println("Find the greatest common divisor of given numbers.");
-
-        Engine.check(returnDataForGcd());
+        Engine.gameGcd();
     }
 }
