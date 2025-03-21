@@ -27,7 +27,7 @@ class App {
 
         switch (userChoiceInMenu()) {
             case "1":
-                Util.greetingUser();
+                Cli.greeting();
                 break;
             case "2":
                 Even.gameEven();
