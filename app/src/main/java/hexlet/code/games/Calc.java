@@ -2,8 +2,6 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Util;
-import java.util.Scanner;
-
 
 public class Calc {
     private static final int MAX_NUMBER = 100; // Максимальное число для генерации
