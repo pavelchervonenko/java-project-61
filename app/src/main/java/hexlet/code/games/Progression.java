@@ -47,6 +47,9 @@ public class Progression {
     }
 
     public static void gameProgression() {
-        Engine.gameProgression();
+        String[][] gameData = returnDataForProgression();
+        String rule = "What number is missing in the progression?";
+
+        Engine.gameStart(gameData, rule);
     }
 }

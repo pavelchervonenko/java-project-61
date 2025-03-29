@@ -26,10 +26,10 @@ public class Gcd {
             String numberOneString = String.valueOf(numberOne);
             String numberTwoString = String.valueOf(numberTwo);
 
+            String question = numberOneString + " " + numberTwoString;
+
             int answerInteger = gcd(numberOne, numberTwo);
             String answerString = String.valueOf(answerInteger);
-
-            String question = numberOneString + " " + numberTwoString;
 
             data[i][0] = question;
             data[i][1] = answerString;
@@ -38,6 +38,9 @@ public class Gcd {
     }
 
     public static void gameGcd() {
-        Engine.gameGcd();
+        String[][] gameData = returnDataForGcd();
+        String rule = "Find the greatest common divisor of given numbers.";
+
+        Engine.gameStart(gameData, rule);
     }
 }
