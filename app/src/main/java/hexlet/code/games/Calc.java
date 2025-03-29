@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Calc {
-    private static final int MAX_NUMBER = 100;// Максимальное число для генерации
+    private static final int MAX_NUMBER = 100; // Максимальное число для генерации
     private static final int PARE = 2;
 
     public static int calculateAnswer(int numberOne, int numberTwo, String operation) {

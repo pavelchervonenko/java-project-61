@@ -14,7 +14,7 @@ public class Engine {
         return scannerName.next();
     }
 
-    public static void invitationToTheGame () {
+    public static void invitationToTheGame() {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
     }
