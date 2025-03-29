@@ -4,8 +4,27 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Calc {
-    private static final int MAX_NUMBER = 100; // Максимальное число для генерации
+    private static final int MAX_NUMBER = 100;// Максимальное число для генерации
     private static final int PARE = 2;
+
+    public static int calculateAnswer(int numberOne, int numberTwo, String operation) {
+        int answerInteger = 0;
+        switch (operation) {
+            case "-":
+                answerInteger = numberOne - numberTwo;
+                break;
+            case "+":
+                answerInteger = numberOne + numberTwo;
+                break;
+            case "*":
+                answerInteger = numberOne * numberTwo;
+                break;
+            default:
+                System.out.println("Error: unknown operation.");
+                break;
+        }
+        return answerInteger;
+    }
 
     public static String[][] returnDataForCalc() {
         String[][] data = new String[Engine.ROUNDS][PARE];
@@ -18,25 +37,10 @@ public class Calc {
             int max = operations.length;
             String operation = operations[Util.randomWithBoard(0, max - 1)];
 
-            int answerInteger = 0;
-            switch (operation) {
-                case "-":
-                    answerInteger = numberOne - numberTwo;
-                    break;
-                case "+":
-                    answerInteger = numberOne + numberTwo;
-                    break;
-                case "*":
-                    answerInteger = numberOne * numberTwo;
-                    break;
-                default:
-                    System.out.println("Error: unknown operation.");
-                    break;
-            }
             String numberOneString = String.valueOf(numberOne);
             String numberTwoString = String.valueOf(numberTwo);
 
-            String answerString = String.valueOf(answerInteger);
+            String answerString = String.valueOf(calculateAnswer(numberOne, numberTwo, operation));
             String question = numberOneString + " " + operation + " " + numberTwoString;
 
             data[i][0] = question;
@@ -45,7 +49,12 @@ public class Calc {
         return data;
     }
 
+
     public static void gameCalc() {
-        Engine.gameCalc();
+        String[][] gameData = returnDataForCalc();
+        String rule = "What is the result of the expression?";
+
+        Engine.gameStart(gameData, rule);
     }
+
 }
