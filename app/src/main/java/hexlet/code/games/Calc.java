@@ -20,8 +20,7 @@ public class Calc {
                 answerInteger = numberOne * numberTwo;
                 break;
             default:
-                System.out.println("Error: unknown operation.");
-                break;
+                throw new Error("Unknown operation: '${operation}'!");
         }
         return answerInteger;
     }

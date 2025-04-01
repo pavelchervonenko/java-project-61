@@ -25,7 +25,8 @@ class App {
 
         System.out.print("Your choice: ");
 
-        switch (userChoiceInMenu()) {
+        String choice = userChoiceInMenu();
+        switch (choice) {
             case "1":
                 Cli.greeting();
                 break;
@@ -49,8 +50,7 @@ class App {
                 System.exit(0);
                 break;
             default:
-                System.out.println("You entered the wrong value. Try again.");
-                break;
+                throw new Error("You entered the wrong value: '${choice}'!");
         }
     }
 }
