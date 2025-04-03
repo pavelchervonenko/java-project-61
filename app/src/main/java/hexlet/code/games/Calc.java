@@ -20,7 +20,7 @@ public class Calc {
                 answerInteger = numberOne * numberTwo;
                 break;
             default:
-                throw new Error("Unknown operation: '${operation}'!");
+                throw new IllegalArgumentException("You entered the wrong value: " + operation);
         }
         return answerInteger;
     }

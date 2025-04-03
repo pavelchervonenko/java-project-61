@@ -50,7 +50,7 @@ class App {
                 System.exit(0);
                 break;
             default:
-                throw new Error("You entered the wrong value: '${choice}'!");
+                throw new IllegalArgumentException("You entered the wrong value: " + choice);
         }
     }
 }
